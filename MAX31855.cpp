@@ -185,10 +185,10 @@ void MAX31855::setMUX(byte _MUX) {
     digitalWrite(AD1, (0x01 & (_MUX >> 1)));
     digitalWrite(AD2, (0x01 & (_MUX >> 2)));
     digitalWrite(MX_EN, HIGH);
-    digitalWrite(CS, LOW);
-    delayMicroseconds(50);
-    digitalWrite(CS, HIGH);
-    delay(100);
+    // digitalWrite(CS, LOW);	//don't know why this is here, doesn't seem to effect reading when removed
+    // delayMicroseconds(50);	//don't know why this is here, doesn't seem to effect reading when removed
+    // digitalWrite(CS, HIGH);	//don't know why this is here, doesn't seem to effect reading when removed
+    delay(110);		//105ms seemed good but using 110 for safety
 #endif	
 }
 
